@@ -61,14 +61,14 @@ const App = () => {
             ></input>
             <br />
             {searching ? <div>Searching, please wait...</div> : ""}
-            {answer ? (
-              <div>
-                Answer <br />
-                {answer[0].text} ({Math.floor(answer[0].score * 100) / 100})
-              </div>
-            ) : (
-              ""
-            )}
+            {answer === undefined ? ("")
+              : answer && !answer.length ? (
+                <div>Nothing found</div>
+              ) : (
+                <div>
+                  Answer <br />
+                  {answer[0].text} ({Math.floor(answer[0].score * 100) / 100})
+              </div>)}
           </React.Fragment>
         )}
       </header>
