@@ -49,8 +49,8 @@ function Facemesh() {
     useEffect(() => { runFacemesh() }, []);
 
     return (
-        <div className="App">
-            <header className="App-header">
+        <div className="FM-App">
+            <header className="FM-App-header">
                 <Webcam
                     ref={webcamRef}
                     style={{
