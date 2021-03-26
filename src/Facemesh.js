@@ -45,7 +45,8 @@ function Facemesh() {
         }
     };
 
-    useEffect(() => { runFacemesh() }, [runFacemesh]);
+    // eslint-disable-next-line
+    useEffect(() => { runFacemesh() }, []);
 
     return (
         <div className="App">
