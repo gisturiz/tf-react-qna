@@ -1,10 +1,11 @@
 import React, { useRef, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "./App.css";
 import * as facemesh from "@tensorflow-models/face-landmarks-detection";
 import Webcam from "react-webcam";
 import { drawMesh } from "./utilities";
 
-function Facemesh() {
+function Facemesh(props) {
     const webcamRef = useRef(null);
     const canvasRef = useRef(null);
 
@@ -50,6 +51,7 @@ function Facemesh() {
 
     return (
         <div className="FM-App">
+            <Link onClick={() => { props.history.push('/') }} style={{position: "absolute", top: 0}}>Home</Link>
             <header className="FM-App-header">
                 <Webcam
                     ref={webcamRef}
