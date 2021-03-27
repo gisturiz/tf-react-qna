@@ -10,7 +10,7 @@ import "./App.css";
 import Home from './Home';
 import Qna from './Qna';
 import Facemash from './Facemesh';
-
+import Pose from './Pose';
 
 const App = () => {
 
@@ -21,6 +21,7 @@ const App = () => {
           <Route exact path='/' component={Home} />
           <Route path='/qna' component={Qna} />
           <Route path='/facemash' component={Facemash} />
+          <Route path='/pose' component={Pose} />
         </Switch>
       </div>
     </Router>

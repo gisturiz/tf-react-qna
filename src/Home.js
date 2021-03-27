@@ -11,6 +11,8 @@ export default function Home(props) {
             <Link onClick={() => { props.history.push('/qna') }}>Question and Answer Model</Link>
             <br />
             <Link onClick={() => { props.history.push('/facemash') }}>Facemash Model</Link>
+            <br />
+            <Link onClick={() => { props.history.push('/pose') }}>Pose Model</Link>
         </div>
     )
 }
