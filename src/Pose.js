@@ -13,7 +13,7 @@ function Pose(props) {
     const runPosenet = async () => {
         const net = await posenet.load({
             inputResolution: { width: 640, height: 480 },
-            scale: 0.8,
+            scale: 0.5,
         });
         //
         setInterval(() => {
