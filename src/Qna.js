@@ -29,20 +29,29 @@ const Qna = () => {
     if (e.which === 13 && model !== null) {
       console.log("Question submitted.");
       setSearching(true);
-      const passage = passageRef.current.value;
+      // const passage = passageRef.current.value; // For submnitting questions based on what has been typed input. Change param line 35 to passage
       const question = questionRef.current.value;
 
-      const answers = await model.findAnswers(question, passage);
+      const answers = await model.findAnswers(question, answerText);
       setSearching(false);
       setAnswer(answers);
       console.log(answers);
     }
   };
 
+  // Text callback
+  const handleCallback = (childData) => {
+    setAnswerText(childData)
+  };
+
   // load model
   useEffect(() => {
     loadModel();
   }, []);
+
+  useEffect(() => {
+  setAnswerText(answerText)
+}, [answerText]);
 
   return (
     <div className="Qna-App">
@@ -54,7 +63,7 @@ const Qna = () => {
           </div>
         ) : (
           <React.Fragment>
-            <Recorder answerText={answerText} />
+            <Recorder parentCallback={handleCallback} />
             <div>
             Information
             </div>
