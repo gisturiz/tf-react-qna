@@ -18,7 +18,7 @@ function Pose(props) {
         //
         setInterval(() => {
             detect(net);
-        }, 100);
+        }, 300);
     };
 
     const detect = async (net) => {
